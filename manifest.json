@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Productivity Suite",
+  "version": "1.0.0",
+  "description": "A production-ready Chrome Extension Productivity Suite with tab session management, website blocker, markdown notes, and newtab dashboard.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Productivity Suite"
+  },
+  "options_page": "options.html",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P",
+        "mac": "Command+Shift+P"
+      },
+      "description": "Open Popup"
+    },
+    "save-session": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S"
+      },
+      "description": "Save Current Session"
+    }
+  }
+}
